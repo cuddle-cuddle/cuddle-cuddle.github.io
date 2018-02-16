@@ -5,7 +5,7 @@ feature-img: "assets/img/posts/2018-02-14/rjokes.png"
 thumbnail: "assets/img/posts/2018-02-14/rjokes.png"
 ---
 
-[![Reddit Jokes]({{ site.baseurl }}/images/posts/2018-02-14/rjokes.png)]({{page.url}})
+[![Reddit Jokes](assets/img/posts/2018-02-14/rjokes.png)]({{page.url}})
 
 [Jupyter Notebook: ]({{ site.baseurl }}/jupyter/jobfair2018_blog.ipynb)
 

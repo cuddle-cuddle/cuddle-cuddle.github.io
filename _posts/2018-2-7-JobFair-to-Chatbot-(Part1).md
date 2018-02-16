@@ -1,6 +1,8 @@
 ---
 layout: post
 title: "NLP: Jobfair2018 to Chatbot: Veni, Vidi, Vici of a terrible website. (Part0: WHO WROTE THIS WEBSITE???)"
+feature-img: "assets/img/posts/2018-02-07/company_list.png"
+thumbnail: "assets/img/posts/2018-02-07/company_list.png"
 ---
 [![Jobfair2018]({{ site.baseurl }}/images/posts/2018-02-07/company_list.png)]({{page.url}})
 
