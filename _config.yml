@@ -1,6 +1,6 @@
 # SITE CONFIGURATION
-baseurl: "/Type-on-Strap"
-url: "https://sylhare.github.io"
+baseurl: 
+url: "https://cuddle-cuddle.github.io"
 
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
@@ -15,8 +15,8 @@ theme_settings:
 
   # Header and footer text
   header_text: > #two or three lines to describe your site
-     <p>My <code>MachineLearning</code>BLAG <br>...NLP, CNN, RNN and more</p>
-  header_text_feature_image: assets/img/lstm.png
+     <p style="color: black;text-shadow: 1px 1px 2px #98c379;">My <code>MachineLearning</code>BLAG <br>...NLP, CNN, RNN and more</p>
+  header_text_feature_image: assets/img/lstm_black.png
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
