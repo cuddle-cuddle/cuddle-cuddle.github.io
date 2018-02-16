@@ -5,22 +5,24 @@ url: "https://sylhare.github.io"
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Type on Strap
-  avatar: assets/img/triangle.svg
+  title:  MLBlag
+  #avatar: assets/img/triangle.svg
+  avatar: assets/img/blag.png
   favicon: assets/favicon.ico
   gravatar: # Email MD5 hash
-  description: "A website with blog posts and pages" # used by search engines
+  description: "Mathematician TO Physicist TO Web Dev TO ML"
+
 
   # Header and footer text
   header_text: > #two or three lines to describe your site
-     <p>Change header text in <code>_config.yml</code> <br> to update this feature.</p>
-  header_text_feature_image: assets/img/pexels/triangular.jpeg
+     <p>My <code>MachineLearning</code>BLAG <br>...NLP, CNN, RNN and more</p>
+  header_text_feature_image: assets/img/lstm.png
   footer_text: >
    Powered by <a href="https://jekyllrb.com/">Jekyll</a> with <a href="https://github.com/sylhare/Type-on-Strap">Type on Strap</a>
 
   # Icons
   rss: true
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: cuddlecuddle at gmail dot com
   behance:
   bitbucket:
   dribbble:
@@ -43,15 +45,15 @@ theme_settings:
   wordpress:
   youtube:
 
-  # Scripts / Features 
+  # Scripts / Features
   google_analytics: # Tracking ID, e.g. "UA-000000-01"
   disqus_shortname:
   katex: true # Enable if using math markup
   portfolio: true
   search: true
   tags: true
-  
-  
+
+
   # Localization strings
   str_follow_on: "Follow on"
   str_rss_follow: "Follow RSS feed"
