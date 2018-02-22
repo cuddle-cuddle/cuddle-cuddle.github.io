@@ -4,7 +4,7 @@ title: "NLP: Jobfair2018 to Chatbot: Veni, Vidi, Vici of a terrible website. (Pa
 feature-img: "assets/img/posts/2018-02-07/company_list.png"
 thumbnail: "assets/img/posts/2018-02-07/company_list.png"
 ---
-[![Jobfair2018]({{ site.baseurl }}/images/posts/2018-02-07/company_list.png)]({{page.url}})
+[![Jobfair2018](assets/img/posts/2018-02-07/company_list.png)]({{page.url}})
 
 Seems like a lot of the stuff I'm doing on my blog is scraping and NLp.... Not surprised since I'm looking for an nlp job.
 
@@ -17,7 +17,7 @@ wget --recursive --no-parent https://www.partners4employment.ca/student-alumni
 ... so we get floor plans, info, but nothing about job descriptions. That's okay, they must live somewhere else.
 
 Go back to the list, open in new tab... nothing. Oh god. Is this what I think it is?
-![Company Details]({{ site.baseurl }}/images/posts/company_details2.png)
+![Company Details](assets/img/posts/company_details2.png)
 <ul>
 <li>Hint 1: Mouse over says `javascript: void(0)`</li>
 <li>Hint 2: The url of each organization is the same as list url</li>

@@ -5,7 +5,7 @@ feature-img: "assets/img/posts/2018-02-08/company_csv.png"
 thumbnail: "assets/img/posts/2018-02-08/company_csv.png"
 ---
 
-[![Jobfair2018]({{ site.baseurl }}/images/posts/2018-02-08/company_csv.png)]({{page.url}})
+[![Jobfair2018](assets/img/posts/2018-02-08/company_csv.png)]({{page.url}})
 
 [Jupyter Notebook: ]({{ site.baseurl }}/jupyter/jobfair2018_blog.ipynb)
 
