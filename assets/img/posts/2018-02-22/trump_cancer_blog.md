@@ -1,13 +1,13 @@
 
 ## Still not NLP, but some modeling
 
-The purpose of this is to shed light on the jokes data we have retrieved. 
-Trump is a popular butt end of a joke on /r/Jokes. Are there any patterns in this? Doest the election have any result on his un-popularity? 
+The purpose of this is to shed light on the jokes data we have retrieved.
+Trump is a popular butt end of a joke on /r/Jokes. Are there any patterns in this? Doest the election have any result on his un-popularity?
 
-And answer to many more quesitons. 
+And answer to many more quesitons.
 -- any other event that makes people hate trump
 -- how quickly do people gain/lose intersting in trump bashing
--- etc. etc. 
+-- etc. etc.
 
 ## Data import and pre-process
 
@@ -203,16 +203,16 @@ for i in range(dflen):
     totals.append(currtotal)
 ```
 
-The reason why we're adding all the scores together is that this is a dumb way to do integration. 
-ideally, we want to know how many posts/score about trumps are posted per hour/day, but the data is far from smooth. 
-Thus, the poopr person's integration. 
+The reason why we're adding all the scores together is that this is a dumb way to do integration.
+ideally, we want to know how many posts/score about trumps are posted per hour/day, but the data is far from smooth.
+Thus, the poopr person's integration.
 
 
 ```python
-df['sum_score'] = totals 
+df['sum_score'] = totals
 ```
 
-we're also taking advantage of the matplotlib's plot_date function, so that the x axis is labeled nicely for us. 
+we're also taking advantage of the matplotlib's plot_date function, so that the x axis is labeled nicely for us.
 
 
 ```python
@@ -229,7 +229,7 @@ from scipy.optimize import curve_fit
 ```
 
 ## Preliminary look: We started making way more fun of Trump after the election, Nov. 8th, 2016
-### The inflection point is pretty fucking hard to miss. 
+### The inflection point is pretty fucking hard to miss.
 
 
 ```python
@@ -243,7 +243,7 @@ plt.show()
 ```
 
 
-![png](output_16_0.png)
+![png]({{ site.baseurl }}/jupyter/trump_cancer_blog/output_16_0.png)
 
 
 ## Take a closer look to the election day
@@ -252,7 +252,7 @@ plt.show()
 
 ```python
 def getDFRange(start_date, end_date):
-    return df[(df['timestamp']>= timeToStamp(start_date)) 
+    return df[(df['timestamp']>= timeToStamp(start_date))
                   & (df['timestamp']< timeToStamp(end_date))]
 ```
 
@@ -271,11 +271,11 @@ plt.show()
 ```
 
 
-![png](output_19_0.png)
+![png]({{ site.baseurl }}/jupyter/trump_cancer_blog/output_19_0.png)
 
 
-## But closer observation renders the data discontinuous. 
-... one educated guess is that Reddit derped upon the huge input of jokes, so only update /r/Jokes page(subreddit) every n minutes. 
+## But closer observation renders the data discontinuous.
+... one educated guess is that Reddit derped upon the huge input of jokes, so only update /r/Jokes page(subreddit) every n minutes.
 
 
 ```python
@@ -292,10 +292,10 @@ plt.show()
 ```
 
 
-![png](output_21_0.png)
+![png]({{ site.baseurl }}/jupyter/trump_cancer_blog/output_21_0.png)
 
 
-### this calls for a more sophisticated way to look at the data. 
+### this calls for a more sophisticated way to look at the data.
 
 # Experiment 2: binning the data per hour
 
@@ -334,10 +334,10 @@ Getting the data within the timeframe of intest
 def getDateRangeData(data, start_date, end_date):
     start_timestamp = time.mktime(start_date.timetuple())
     end_timestamp = time.mktime(end_date.timetuple())
-    
+
     new_x = []
     new_y = []
-    for d in data: 
+    for d in data:
         if (d[0] >= start_timestamp) & (d[0]<end_timestamp):
             new_x.append(datetime.fromtimestamp(d[0]))
             new_y = new_y + [d[1]]
@@ -371,12 +371,12 @@ plt.show()
 ```
 
 
-![png](output_29_0.png)
+![png]({{ site.baseurl }}/jupyter/trump_cancer_blog/output_29_0.png)
 
 
-... Oh, my. What do we see here? 
+... Oh, my. What do we see here?
 ## A growth Curve! (around election day).
-This is a very classical growth curve that's used to model many many things, from growth of bacteria to that of cancer. 
+This is a very classical growth curve that's used to model many many things, from growth of bacteria to that of cancer.
 COOL! Now we can model the growth of Trump jokes as if it were cancer!
 
 # Experiment 3: Magify! Choose model! Fit Curve!
@@ -397,19 +397,19 @@ plt.show()
 ```
 
 
-![png](output_32_0.png)
+![png]({{ site.baseurl }}/jupyter/trump_cancer_blog/output_32_0.png)
 
 
 ## Model: Generalized Logistic Function, with constant growth
-Hum, what else does this curve remind you of? 
-Hint: deep learning? 
-Answer: Sigmoid! 
-Because it is but just a generalized function of sigmoid, a close cousin. 
+Hum, what else does this curve remind you of?
+Hint: deep learning?
+Answer: Sigmoid!
+Because it is but just a generalized function of sigmoid, a close cousin.
 
 
 
 ```python
-# "normalize" the timestamp a bit, so it's easier to deal with. 
+# "normalize" the timestamp a bit, so it's easier to deal with.
 xdata = [timeToStamp(x)/1e9 for x in newx]
 ydata = sumy
 ```
@@ -421,16 +421,16 @@ def growth_func(x, a, k,c,q,b, v):
     return a +(k/np.power((c + q*np.exp(b*x)), v))
 ```
 
-fit curve and find coefficients: 
+fit curve and find coefficients:
  p0=[  9.88700433e+05,  -1.62777400e+00,  -1.02823909e+00,
          4.65014791e-01,   5.36906321e-01,   1.65061719e+00]
 
 
 ```python
-popt, pcov = curve_fit(growth_func, xdata, ydata, 
+popt, pcov = curve_fit(growth_func, xdata, ydata,
                        p0=np.array([  9.88700433e+05,  -1.62777400e+00,  -1.02823909e+00, 4.65014791e-01,   5.36906321e-01,   1.65061719e+00]),
                        maxfev=10000)
-print("a, l, k, c, q, b, v: ", popt) 
+print("a, l, k, c, q, b, v: ", popt)
 ```
 
     a, l, k, c, q, b, v:  [  3.45814289e+05  -3.16163262e-06  -1.02811219e+00   4.65071816e-01
@@ -443,7 +443,7 @@ print("a, l, k, c, q, b, v: ", popt)
 
 ## ... if this is not a perfect fucking fit, I don' tknow what is
 
-...but I also did have 7 parameters, so over fitting is entirely possible. 
+...but I also did have 7 parameters, so over fitting is entirely possible.
 
 
 ```python
@@ -466,14 +466,14 @@ plt.show()
 ```
 
 
-![png](output_40_0.png)
+![png]({{ site.baseurl }}/jupyter/trump_cancer_blog/output_40_0.png)
 
 
-## intepretation of parameters: 
+## intepretation of parameters:
 
 ### Growth Rate = 0.54
 
-# Experiment 4: how does it fit across a larger time frame? 
+# Experiment 4: how does it fit across a larger time frame?
 
 
 ```python
@@ -511,8 +511,8 @@ plt.show()
 ```
 
 
-![png](output_46_0.png)
+![png]({{ site.baseurl }}/jupyter/trump_cancer_blog/output_46_0.png)
 
 
-# You see that point where the curve stopped fitting? 
-# Yep, that's the travel ban. 
+# You see that point where the curve stopped fitting?
+# Yep, that's the travel ban.

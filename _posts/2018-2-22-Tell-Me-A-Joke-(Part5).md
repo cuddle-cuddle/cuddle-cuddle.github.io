@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "NLP: Short Sentence comparison: No NLP (Part 4: How is Trump like Cancer?)"
+title: "NLP: Short Sentence comparison: No NLP (Part 5: How are Trump Jokes like Cancer?)"
 feature-img: "assets/img/posts/2018-02-22/trump_joke_together2.png"
 thumbnail: "assets/img/posts/2018-02-22/trump_joke_together2.png"
 ---
