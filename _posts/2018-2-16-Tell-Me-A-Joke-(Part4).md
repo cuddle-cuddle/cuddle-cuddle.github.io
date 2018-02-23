@@ -5,6 +5,7 @@ feature-img: "assets/img/posts/2018-02-16/2016election.png"
 thumbnail: "assets/img/posts/2018-02-16/2016election.png"
 ---
 
+
 In the last post, we did some comparison between jokes.
 
 This is a friendly light excursion to simple animation, a nice way to visualize our result.
@@ -17,7 +18,7 @@ TFIDF is used to figure out what are the intersting topics of the joke corpus. T
 
 In the short future, I might write another blog on this, but not now.
 
-### statistics of jokes of the election week, Nov. 8th, 2016
+### statistics of jokes of the election week, Nov. 8th, 2016 (Scroll down for the animated version. This is a screen shot.)
 ![Reddit Jokes]({{ site.baseurl }}/assets/img/posts/2018-02-16/2016election_short.png)
 
 [Jupyter Notebook: ]({{ site.baseurl }}/jupyter/jobfair2018_blog.ipynb)
