@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Training CNN to straighten photos, without labeld image dataset"
+title: "Training CNN to straighten photos, without labeled image dataset"
 feature-img: "assets/img/posts/2018-04-02/rotations.png"
 thumbnail: "assets/img/posts/2018-04-02/rotations.png"
 ---
