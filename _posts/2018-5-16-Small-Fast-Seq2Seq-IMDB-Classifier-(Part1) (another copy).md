@@ -1,16 +1,16 @@
 ---
 layout: post
 title: "Small Fast Seq2Seq IMDB Classifier (Part1: Tokenizing)"
-feature-img: "assets/img/posts/2018-05-20/8k_thick.jpg"
-thumbnail: "assets/img/posts/2018-05-20/8k_thick.jpg"
+feature-img: "assets/img/posts/2018-05-16/8k_thick.jpg"
+thumbnail: "assets/img/posts/2018-05-16/8k_thick.jpg"
 ---
 
-### Conclusion: Sentence Piece is much better at tokenizing, retaining all information even when word is not in vocab.
+## Conclusion: Sentence Piece is much better at tokenizing, retaining all information even when word is not in vocab.
 
 **Downloads**: [Jupyter Notebook: ]({{ site.baseurl }}/jupyter/blog_spm_tokenizer_8k-lowercase.ipynb)
 
 
-###This is the first post of a 3 part post to explore google's [Sentence Piece](https://github.com/google/sentencepiece)'s(SP) tokenizing power.
+### This is the first post of a 3 part post to explore google's [Sentence Piece](https://github.com/google/sentencepiece)'s(SP) tokenizing power.
 
 In a nut shell, this is the difference between SP's tokenizing effort and traditional approach:
 
