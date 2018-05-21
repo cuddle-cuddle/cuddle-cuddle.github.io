@@ -5,7 +5,6 @@ feature-img: "assets/img/posts/2018-05-16/tok_test.jpg"
 thumbnail: "assets/img/posts/2018-05-16/tok_test.jpg"
 ---
 
-## Conclusion: Sentence Piece is much better at tokenizing, retaining all information even when word is not in vocab.
 
 **Downloads**: [Jupyter Notebook: ]({{ site.baseurl }}/jupyter/blog_spm_lowercase_vocab_test.ipynb)
 
